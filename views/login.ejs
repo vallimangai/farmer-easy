@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="css/login.css">
+<%- include('partials/header') %>
+<section class="form-v7">
+    <div class="page-content">
+		<div class="form-v7-content">
+			<div class="form-left">
+				<img src="image/2.png" alt="form">
+				<p class="text-1">Sign In</p>
+				<p class="text-2">Privaci policy & Term of service</p>
+			</div>
+			<form class="form-detail" action="/login" method="post" id="myform">
+				<div class="form-row">
+					<label for="your_email">USERNAME</label>
+					<input type="text" name="username" id="your_email" class="input-text" required >
+				</div>
+				<div class="form-row">
+					<label for="password">PASSWORD</label>
+					<input type="password" name="password" id="password" class="input-text" required>
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="login" class="register" value="Login">
+					<p>Or<a href="/register">Sign up</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<%- include('partials/footer') %>

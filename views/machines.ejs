@@ -1,0 +1,14 @@
+<%- include('partials/header'); -%>
+<div class="forms">
+<h1>Rent machines</h1>
+<% mac.forEach(function(post){ %>
+
+    <h1>Type :<%= post.type1 %></h1>
+    <p>
+        Price: <%= post.price%>
+        Description: <%=post.description+'...'%> 
+        <a href="/machine/<%=post._id%>">Read more</a>
+    </p>
+<%})%>
+</div>
+<%- include('partials/footer'); -%>

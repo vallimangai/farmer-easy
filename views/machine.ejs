@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>
+<div class="forms">
+<h1>Type:<%= type%></h1>
+<p>Description: <%=description%> </p>
+<p>email: <%=email%></p>
+<p>price: <%=price%></p>
+<%  var imageURL="/upload/"+image %> 
+<img src= <%= imageURL %>>
+<p><%= min %> </p>
+<p><%= max %> </p>
+<input type="date" name="dts" min="<%= min %>" max="<%= max %>">
+</div>
+<%- include('partials/footer'); -%>

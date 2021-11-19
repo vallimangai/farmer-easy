@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<body  onload="getLocation(navigator)">
+<div class="img">
+    <section class="forms">
+        <form action="/weather" method="post">
+            <input type="text" name="lat" id="x1">
+            <input type="text" name="lon" id="x2">
+            <button type="submit">check</button>
+        </form>
+    </section>
+</div>
+    <script>
+        var lat="";
+        var lon="";
+        var x1 = document.getElementById("x1");
+        var x2 = document.getElementById("x2");
+        function getLocation(navigator) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        
+        } else { 
+        x1.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        console.log(position);
+        lat=position.coords.latitude;
+        lon=position.coords.longitude;
+        x1.value =lat;
+        x2.value=lon;
+        
+    }
+        
+    </script>
+</body>

@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="css/login.css">
+<%- include('partials/header') %>
+<section class="form-v7">
+    <div class="page-content">
+		<div class="form-v7-content">
+			<div class="form-left">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7qoRnmTnEdFSHOlmF6eGIj58i12zRLDFfsg&usqp=CAU" height="550px" alt="form">
+				<p class="text-1">Sign Up</p>
+				<p class="text-2">Privaci policy & Term of service</p>
+			</div>
+			<form class="form-detail" action="/register" method="POST" id="myform">
+				<div class="form-row">
+					<label for="username">USERNAME</label>
+					<input type="text" name="username" id="username" class="input-text">
+				</div>
+				<div class="form-row">
+					<label for="your_email">E-MAIL</label>
+					<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+				</div>
+				<div class="form-row">
+					<label for="password">PASSWORD</label>
+					<input type="password" name="password" id="password" class="input-text" required>
+				</div>
+				<div class="form-row">
+					<label for="comfirm_password">CONFIRM PASSWORD</label>
+					<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
+				</div>
+				<div class="form-row-last">
+					<button type="submit" class="register">Register</button>
+					<p>Or<a href="/login">Sign in</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+	</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,49 @@
+<%- include('partials/header'); -%>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<div class="forms ">
+<h1>Compose</h1>
+<form action="/compose" method="post" enctype="multipart/form-data"> 
+    <div class="form-group">
+        <label >Email</label>
+        <input class="form-control" type="text" name="email">
+    </div>
+    <div class="form-group">
+        <label >Phone</label>
+        <input class="form-control" type="text" name="phone">
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" name="price"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" name="daterange" />
+    </div>
+    <div class="form-group">
+        <label>Type</label>
+        <input type="text" name="type1"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>File</label>
+        <input type="file" name="file"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea name="desc"class="form-control"  id="" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit"  class="btn btn-primary">Pubiish</button>
+</form>
+   
+</div>
+<script>
+    $(function() {
+      $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+      }, function(start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      });
+    });
+</script>
