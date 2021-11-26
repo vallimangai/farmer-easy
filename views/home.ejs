@@ -1,81 +1,130 @@
+<%if(l){%>
 <%- include('partials/header') %>
+<%}else{%>
+    <%-include('partials/headerlogin') %>
+<%}%>
 <div class="img">
 <div class="homecontent" >
     <div class="hom">
-        <h1>“The soil is the great connector of lives, the source and destination of all. It is the healer and restorer and resurrector, by which disease passes into health, age into youth, death into life. Without proper care for it we can have no community, because without proper care for it we can have no life.”</h1>
+        <h1><%=q%></h1>
+        <!-- <h1>“The soil is the great connector of lives, the source and destination of all. It is the healer and restorer and resurrector, by which disease passes into health, age into youth, death into life. Without proper care for it we can have no community, because without proper care for it we can have no life.”</h1> -->
     </div>
 </div>
 </div>
 <div class="features">
     <h1 class="text-center">Features</h1>
     <div class="row">
-        <div class="col">
+        <!-- Appointment booking -->
+        <div class="col23 col-6 col-md-4">
+            <img src="/image/soil.png" alt="" class="fe1">
+            <div class="desc">
+                <h3 class="text-center">Soil Testing</h3>
+            <div class="text-center">
+            <a href="/bookappointment"><button class="btn btn-1">Click me</button></a>
+            </div>
+            </div>
+        </div>
+         <!-- Renting machines -->
+         <div class="col23 col-6 col-md-4">
+            <img class="fe1" src="/image/rent.png" alt="" srcset="">
+            <div class="desc">
+                <h3 class="text-center">Renting machineries</h3>
+                <div class="text-center">
+                   <a href="/machines"><button class="btn btn-1">Click me</button></a> 
+                </div>
+            </div>
+        </div>
+        <!-- online trading -->
+        <div class="col23 col-6 col-md-4">
             <img class="fe1" src="/image/sell.png" alt="" srcset="">
             <div class="desc">
                 <h3 class="text-center">Online trading</h3>
-                <p>help farmers to sell their products to consumers directly on online without any market or mediators. On the other hand customers will be benefited from the fresh and genuine products.</p>    
                 <div class="text-center">
                     <button class="btn btn-1">Click me</button>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <img src="/image/soil.png" alt="" class="fe1">
+        <!-- video streaming -->
+        <div class="col23 col-6 col-md-4">
+            <img class="fe1" src="/image/video.png" alt="" srcset="">
             <div class="desc">
-                <h3 class="text-center">Soil Testing</h3>
-            <p>
-                growing crops is the type of soil. So, it is necessary to test the soil and know the most suitable crops and fertilizers to be used. Werovides the online booking of appointment for soil testing in the laboratories. 
-            </p>
-            <div class="text-center">
-                <button class="btn btn-1">Click me</button>
-            </div>
-            </div>
-        </div>
-        <div class="col">
-            <img src="/image/storage.png" alt="" class="fe1">
-            <div class="desc">
-                <h3 class="text-center">Locating nearby cold storages</h3>
-                <p>Storing the products is really a challenging task for the famers.We makes the process a bit handy by showing the cold storages nearby for storing their crops safe and to sell the product based on rise in the market. </p>
-            </div>
-            <div class="text-center">
-                <button class="btn btn-1">Click me</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <img class="fe1" src="/image/weather1.png" alt="" srcset="">
-            <div class="desc">
-                <h3 class="text-center">Online trading</h3>
-                <p>help farmers to sell their products to consumers directly on online without any market or mediators. On the other hand customers will be benefited from the fresh and genuine products.</p>    
+                <h3 class="text-center">Video streaming</h3>
                 <div class="text-center">
-                    <a href="/weatheri"><button class="btn btn-1">Click me</button></a>
+                    <button class="btn btn-1">Click me</button>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <img src="/image/soil.png" alt="" class="fe1">
+        <!-- locating nearby cold storage -->
+        <div class="col23 col-6 col-md-4">
+            <img src="/image/locate.png" alt="" class="fe1">
             <div class="desc">
-                <h3 class="text-center">Soil Testing</h3>
-            <p>
-                growing crops is the type of soil. So, it is necessary to test the soil and know the most suitable crops and fertilizers to be used. Werovides the online booking of appointment for soil testing in the laboratories. 
-            </p>
+                <h3 class="text-center"> Locating nearby cold storages</h3>
+             </div>
             <div class="text-center">
                 <button class="btn btn-1">Click me</button>
+            </div>
+        </div>
+        <!-- Schedule for seed distribtution -->
+        <div class="col23 col-6 col-md-4">
+            <img class="fe1" src="/image/schedule.png" alt="" srcset="">
+            <div class="desc">
+                <h3 class="text-center">Schedule for seeds distribution</h3>
+                <div class="text-center">
+                    <a href="/schedule"><button class="btn btn-1">Click me</button></a>
+                </div>
+            </div>
+        </div>
+        <!-- weather forecast -->
+        <div class="col23 col-6 col-md-4">
+            <img src="/image/climate.png" alt="" class="fe1">
+            <div class="desc">
+                <h3 class="text-center">Weather forecast</h3>
+            <div class="text-center">
+                <form action="/weather" method="post">
+                    <input type="hidden" name="lat" id="x1">
+                    <input type="hidden" name="lon" id="x2">
+                    <button type="submit" class="btn btn-1">click me</button>
+                </form>
             </div>
             </div>
         </div>
-        <div class="col">
-            <img src="/image/storage.png" alt="" class="fe1">
+        <div class="col23 col-6 col-md-4">
+            <img src="/image/price.png" alt="" class="fe1">
             <div class="desc">
-                <h3 class="text-center">Locating nearby cold storages</h3>
-                <p>Storing the products is really a challenging task for the famers.We makes the process a bit handy by showing the cold storages nearby for storing their crops safe and to sell the product based on rise in the market. </p>
-            </div>
+                <h3 class="text-center">Price update of agriproducts</h3>
+             </div>
             <div class="text-center">
                 <button class="btn btn-1">Click me</button>
             </div>
+        </div>
+        <div class="col23 col-6 col-md-4 xyz">
+
         </div>
     </div>
 </div>
-    
+<body  onload="getLocation(navigator)">
+    <script>
+        var lat="";
+        var lon="";
+        var x1 = document.getElementById("x1");
+        var x2 = document.getElementById("x2");
+        function getLocation(navigator) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        
+        } else { 
+        x1.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        console.log(position);
+        lat=position.coords.latitude;
+        lon=position.coords.longitude;
+        x1.value =lat;
+        x2.value=lon;
+        
+    }
+        
+    </script>
+</body>
 <%- include('partials/footer') %>

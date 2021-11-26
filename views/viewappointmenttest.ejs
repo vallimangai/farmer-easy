@@ -1,0 +1,25 @@
+<%- include('partials/headerappointment'); -%>
+<table>
+    <tr>
+        <th>
+           Email id   
+        </th>
+        <th>
+           Phone number
+        </th>
+        <th>
+            Date
+         </th>
+        <th>
+          Time
+        </th>
+    </tr>
+    <% for(var i=0;i<mac.length;i++){ %>
+    <tr>
+        <td><%=mac[i].email%></td>
+        <td><%=mac[i].phone%></td>
+        <td><%=mac[i].date%></td>
+        <td><%=mac[i].time%></td>
+    </tr>
+    <%}%>
+</table>

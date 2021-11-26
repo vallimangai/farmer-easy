@@ -1,0 +1,38 @@
+<%- include('partials/headerappointment'); -%>
+<% if(message.length>0){ %>
+    <div class="alert alert-success">
+        <%= message %>
+    </div>
+<% }%>
+<table>
+    <tr>
+        <th>
+           Email id   
+        </th>
+        <th>
+           Phone number
+        </th>
+        <th>
+            Date
+         </th>
+        <th>
+          Time
+        </th>
+        <th>
+            cancel
+        </th>
+    </tr>
+    <% for(var i=0;i<mac.length;i++){ %>
+    <tr>
+        <td><%=mac[i][0].email%></td>
+        <td><%=mac[i][0].phone%></td>
+        <td><%=mac[i][0].date%></td>
+        <td><%=mac[i][0].time%></td>
+        <td>
+            <form action="/delete/<%=mac[i][0]._id%>" method="post">
+                <button type=submit>❌</button>
+            </form>
+        </td>
+    </tr>
+    <%}%>
+</table>

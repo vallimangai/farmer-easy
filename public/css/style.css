@@ -12,25 +12,23 @@ body, html {
 }
 
 .logo{
-    height: 80px;
+    height: 65px;
     width:150px;
 }
+.navbar-brand{
+    padding: 0px;
+  }
 .navbar{
     padding: 0.2rem;
     height: 0rem;
-    min-height:13vh;
+    min-height:9vh;
     overflow: hidden;
     position: fixed;
     width: 100%;
     z-index: 25;
     top: 0;
 }
-.navbar{
-    background-color:rgb(0,0,0,80%) !important;
-}
-.nav-link{
-    color: white !important;
-}
+
 .hom{
     position: absolute; /*or fixed*/
     right:150px;
@@ -41,15 +39,16 @@ body, html {
     background-color: rgba(92, 89, 89, 0.5);
 }
 .features{
-    padding-top:15px ;
+    padding-top:5px ;
 }
-.col{
+.col23{
     border: solid darkgreen;
-    background-color: #7ee8fa;
-    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
-
     border-radius: 2rem;
-    margin: 0 2rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    width:30%;
+    margin-bottom: 5px;
+    justify-content: space-around;
 }
 .forms{
     margin-top: 100px !important;
@@ -62,7 +61,10 @@ body, html {
     width: 100%;
     height: 350px;
     border-radius: 3rem;
-    padding: 20px;
+    padding: 10px;
+}
+.xyz{
+    border: none;
 }
 .desc>h6{
     font-weight: bolder;
@@ -93,9 +95,58 @@ font-size: larger;
   .btn-1 {
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
   }
-@media only screen and (max-width: 760px) {
+  table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+tr:nth-child(even){background-color: #f2f2f2;}
+  
+tr:hover {background-color: #ddd;}
+  
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+@media (max-width: 760px) {
     .img {
     /* to improve page load speed on mobile internet connections */
     background-image: url('/image/img2.png');
     }
+    .hom{
+        width:450px !important;
+        right: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        
     }
+    .col23{
+        width:40%;
+    }
+ }
+@media (max-width: 500px) {
+    .hom{
+        width:350px !important;
+        right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .col23{
+        width:80%;
+    }
+}
+
+    

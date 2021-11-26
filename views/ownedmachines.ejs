@@ -1,0 +1,23 @@
+<%- include('partials/headerrent'); -%>
+<div class="forms">
+    <% mac.forEach(function(post){ %>
+        <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <%  var imageURL="/upload/"+post[0].image %> 
+                <img src= <%= imageURL %>>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Type: <%= post[0].type1 %></h3>
+                  <p class="card-text">Description: <%=post[0].description+'...'%>
+                    <br>
+                   <h5> License Plate: <%= post[0].licenseNumber%> </h5> </p>
+                  <p class="card-text"><small class="text-muted"><h2>Rs:<%= post[0].price%>/perday</h2></small></p>
+                  <a href="/bookingdetails/<%=post[0]._id%>" class="btn btn-primary">View</a>  
+                </div>
+              </div>
+            </div>
+          </div>
+    <%})%>
+</div>

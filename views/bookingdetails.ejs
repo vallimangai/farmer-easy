@@ -1,0 +1,17 @@
+<%- include('partials/headerrent'); -%>
+<table>
+    <tr>
+        <th>
+            Date    
+        </th>
+        <th>
+            Booked by
+        </th>
+    </tr>
+    <% for(var i=0;i<mac.length;i++){ %>
+    <tr>
+        <td><%=date[i]%></td>
+        <td><%=mac[i][0].username%></td>
+    </tr>
+    <%}%>
+</table>

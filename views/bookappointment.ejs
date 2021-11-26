@@ -1,0 +1,78 @@
+<%- include('partials/headerappointment'); -%>
+<% if(message.length>0){ %>
+    <div class="alert alert-success">
+        <%= message %>
+    </div>
+<% }%>
+<div id="booking" class="section forms">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <div class="booking-bg"></div>
+                    <form method="post" action="/bookappointment">
+                        <div class="form-header">
+                            <h2>Book Your Appointment for Soil Testing</h2>
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label">Name</span>
+                            <input class="form-control" type="text" placeholder="Enter your Name" name="name">
+                            
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label">Phone</span>
+                            <input class="form-control" type="tel" placeholder="Enter your Phone number" name="phone">
+                            
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label">Email</span>
+                            <input class="form-control" type="email" placeholder="Enter your email" name="email">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Date</span>
+                                    <%var min=new Date().toISOString().split('T')[0] %>
+                                    <input class="form-control" type="date" min=<%= min %> name="date" required>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Time (opening hours 9:00 to 17:00):</span>
+                                    <input class="form-control" type="time" name="time" min="9:00" max="17:00" required>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-btn">
+                            <button class="submit-btn" type="submit">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script>
+    $('.form-control').each(function () {
+        floatedLabel($(this));
+    });
+
+    $('.form-control').on('input', function () {
+        floatedLabel($(this));
+    });
+
+    function floatedLabel(input) {
+        var $field = input.closest('.form-group');
+        if (input.val()) {
+            $field.addClass('input-not-empty');
+        } else {
+            $field.removeClass('input-not-empty');
+        }
+    }
+</script>

@@ -1,10 +1,15 @@
-<%- include('partials/header'); -%>
+<%- include('partials/headerrent'); -%>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <div class="forms ">
 <h1>Compose</h1>
+    <% if(message.length>0){ %>
+        <div class="alert alert-success">
+            <%= message %>
+        </div>
+    <% }%>
 <form action="/compose" method="post" enctype="multipart/form-data"> 
     <div class="form-group">
         <label >Email</label>
@@ -25,6 +30,10 @@
     <div class="form-group">
         <label>Type</label>
         <input type="text" name="type1"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>License Number</label>
+        <input type="text" name="plate"class="form-control">
     </div>
     <div class="form-group">
         <label>File</label>

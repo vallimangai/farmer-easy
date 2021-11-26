@@ -1,0 +1,53 @@
+<%- include('partials/header'); -%>
+
+<div class="forms">
+    <% if(message.length>0){ %>
+        <div class="alert alert-success">
+            <%= message %>
+        </div>
+    <% }%>
+<table class="center">
+    <tr>
+        <th>
+           sno  
+        </th>
+        <th>
+           name
+        </th>
+        <th>
+           Variant
+         </th>
+        <th>
+           availability
+        </th>
+        <th>
+            Available place
+        </th>
+        <th>
+            Number
+        </th>
+        <th>
+            Available date
+        </th>
+    </tr>
+    <% for(var i=0;i<mac.length;i++){ %>
+        <tr>
+            <td><%=mac[i].id%></td>
+            <td><%=mac[i].name%></td>
+            <td><%=mac[i].variant%></td>
+            <td><%=mac[i].availability%></td>
+            <td><%=mac[i].Availableplace%></td>
+            <td><%=mac[i].Number%></td>
+            <td><%=mac[i].Availabledates%></td>
+        
+
+        </tr>
+    <%}%>
+
+</table>
+<br>
+<br>
+<form action="/subscribe"  method="post" class="text-center">
+<button type="submit" class="btn btn-1">Sign up for live information</button>
+</form>
+</div>

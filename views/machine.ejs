@@ -1,13 +1,23 @@
-<%- include('partials/header'); -%>
+<%- include('partials/headerrent'); -%>
+<% if(message.length>0){ %>
+    <div class="alert alert-success">
+        <%= message %>
+    </div>
+<% }%>
 <div class="forms">
 <h1>Type:<%= type%></h1>
 <p>Description: <%=description%> </p>
 <p>email: <%=email%></p>
 <p>price: <%=price%></p>
+<p>LicenseNumber:<%=license%></p>
 <%  var imageURL="/upload/"+image %> 
 <img src= <%= imageURL %>>
 <p><%= min %> </p>
 <p><%= max %> </p>
-<input type="date" name="dts" min="<%= min %>" max="<%= max %>">
+<form action="/book" method="post" >
+    <input type="hidden" name="id" value="<%= id%>">
+    <input type="date" name="dts" min="<%= min %>" max="<%= max %>">
+    <input type="submit" value="Book">
+</form>
 </div>
 <%- include('partials/footer'); -%>

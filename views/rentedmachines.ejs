@@ -1,0 +1,26 @@
+<%- include('partials/headerrent'); -%>
+<table>
+    <tr>
+        <th>
+            Date    
+        </th>
+        <th>
+           Machines rented
+        </th>
+        <th>
+            Machines Number
+         </th>
+        <th>
+            Price
+        </th>
+    </tr>
+    <% for(var i=0;i<mac.length;i++){ %>
+    <tr>
+        <td><%=date[i]%></td>
+        <td><%=mac[i][0].type1%></td>
+        <td><%=mac[i][0].licenseNumber%></td>
+        <td><%=mac[i][0].price%></td>
+
+    </tr>
+    <%}%>
+</table>

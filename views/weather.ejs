@@ -1,15 +1,35 @@
 <%- include('partials/header') %>
-<div class="img">
     <div class="forms">
-        <div class="row">
-            <% for (let i = 0; i < 7; ++i) { %>
-            <div class="col">
-                <p><%= weatherdata.list[0].weather[0].description %></p>
-                <h1><%= weatherdata.list[i].main.temp %>Celcius</h1>
-                <%  var imageURL="https://openweathermap.org/img/wn/"+weatherdata.list[i].weather[0].icon+"@2x.png" %> 
-                <img src= <%= imageURL %>>
-            </div>
-        <% } %>
+        <h1 class="text-center">Weather forecast for next few days in <%=weatherdata.city.name%></h1>
+        <table class="center">
+            <tr>
+                <th>
+                  Date  
+                </th>
+                <th>
+                   Time
+                </th>
+                <th>
+                   Temperature
+                 </th>
+                <th>
+                   description
+                </th>
+                <th>
+                    image
+                </th>
+               
+            </tr>
+            <% for(var i=0;i<weatherdata.list.length;i++){ %>
+                <tr>
+                    <td><%= weatherdata.list[i].dt_txt.split(" ")[0] %></td>
+                    <td><%= weatherdata.list[i].dt_txt.split(" ")[1] %></td>
+                    <td><%= weatherdata.list[i].main.temp %><sup>o</sup>C</td>
+                    <td><%= weatherdata.list[i].weather[0].description %></td>
+                    <%  var imageURL="https://openweathermap.org/img/wn/"+weatherdata.list[i].weather[0].icon+"@2x.png" %> 
+                <td><img src= <%= imageURL %>> </td>
+                
+        
+                </tr>
+            <%}%>
     </div>
-    </div>
-</div>
